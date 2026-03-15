@@ -16,7 +16,7 @@ export default function TopBar() {
     <>
       <header className="topbar">
         {/* Logo — left */}
-        <div className="topbar__logo">PASTA STYLE</div>
+        <a href="#hero" className="topbar__logo" id="topbar-logo">PASTA STYLE</a>
 
         {/* Nav links — center (desktop only) */}
         <nav className="topbar__nav--desktop" aria-label="Top navigation">
@@ -45,7 +45,7 @@ export default function TopBar() {
       {open && (
         <div className="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
           <div className="mobile-menu__header">
-            <span className="mobile-menu__logo">PASTA STYLE</span>
+            <a href="#hero" className="mobile-menu__logo" onClick={close}>PASTA STYLE</a>
             <button className="mobile-menu__close" onClick={close} aria-label="Close menu">✕</button>
           </div>
 
