@@ -4,7 +4,7 @@ import './Hero.css'
 const stickers = [
   { text: 'Pasta Club', top: '12%', left: '2%', rotate: '-6deg', scale: 1, type: 'red-badge', id: 's1' },
   { text: '[PS]', top: '8%', right: '3%', rotate: '4deg', scale: 0.85, type: 'silver', id: 's2' },
-  { text: 'PASTA [STYLE]', top: '22%', right: '2%', rotate: '-3deg', scale: 0.9, type: 'outline', id: 's3' },
+  { text: '#PASTASTYLE', top: '22%', right: '2%', rotate: '-3deg', scale: 0.9, type: 'outline', id: 's3' },
   { text: '✦', top: '50%', left: '2%', rotate: '0deg', scale: 1.2, type: 'spark', id: 's4' },
   { text: '☺', top: '72%', right: '3%', rotate: '12deg', scale: 1, type: 'smiley', id: 's5' },
   { text: 'PASTA\nSTYLE', top: '42%', right: '2%', rotate: '-6deg', scale: 0.9, type: 'red-logo', id: 's6' },
