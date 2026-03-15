@@ -1,0 +1,136 @@
+.pasta-cities {
+  padding: 80px 4vw;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.pasta-cities__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pasta-cities__title {
+  font-family: var(--font-hero);
+  font-size: clamp(64px, 9vw, 140px);
+  line-height: 0.9;
+  letter-spacing: 0;
+}
+
+.pasta-cities__sub {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  max-width: 200px;
+  text-align: right;
+}
+
+/* Grid */
+.pasta-cities__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.city-card {
+  display: flex;
+  flex-direction: column;
+  border: 2.5px solid var(--fg);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 6px 6px 0 var(--fg);
+}
+
+.city-card__img-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.city-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.city-card:hover .city-card__img {
+  transform: scale(1.06);
+}
+
+.city-card__tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: var(--red);
+  color: var(--white);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+}
+
+.city-card__body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 2.5px solid var(--fg);
+}
+
+.city-card__name {
+  font-family: var(--font-hero);
+  font-size: clamp(36px, 4vw, 60px);
+  line-height: 0.9;
+}
+
+.city-card__desc {
+  font-size: 13px;
+  line-height: 1.6;
+  opacity: 0.65;
+  flex: 1;
+}
+
+.city-card__btn {
+  align-self: flex-start;
+  border: 2px solid var(--fg);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.city-card__btn:hover {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .pasta-cities__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .pasta-cities__grid {
+    grid-template-columns: 1fr;
+  }
+  .pasta-cities__sub {
+    text-align: left;
+  }
+}

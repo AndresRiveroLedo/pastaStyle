@@ -1,0 +1,77 @@
+.big-orders {
+  padding: 80px 4vw;
+  background: var(--fg);
+  color: var(--bg);
+  border-top: 2.5px solid var(--fg);
+}
+
+.big-orders__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.big-orders__eyebrow {
+  font-family: var(--font-hero);
+  font-size: clamp(60px, 8vw, 140px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.big-orders__question {
+  font-family: var(--font-hero);
+  font-size: clamp(28px, 3.5vw, 52px);
+  line-height: 1;
+  margin-bottom: 20px;
+  color: var(--red);
+}
+
+.big-orders__sub {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: 0.65;
+  max-width: 380px;
+  margin-bottom: 32px;
+}
+
+.big-orders__cta {
+  display: inline-block;
+  border: 2.5px solid var(--bg);
+  color: var(--bg);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.big-orders__cta:hover {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.big-orders__badge {
+  flex-shrink: 0;
+}
+
+.big-orders__badge-svg {
+  width: clamp(140px, 16vw, 220px);
+  height: clamp(140px, 16vw, 220px);
+  animation: badge-spin 18s linear infinite;
+}
+
+@keyframes badge-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .big-orders__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

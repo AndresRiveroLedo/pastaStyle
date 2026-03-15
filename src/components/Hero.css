@@ -1,0 +1,295 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  margin-top: 52px; /* account for topbar */
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* ---- Headline — pinned to bottom-left ---- */
+.hero__bg-text {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  pointer-events: none;
+  z-index: 3;
+  will-change: transform;
+}
+
+.hero__big-line {
+  font-family: var(--font-hero);
+  font-size: clamp(48px, 7vw, 120px);
+  line-height: 0.9;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  display: block;
+  white-space: nowrap;
+  padding-left: 3vw;
+}
+
+/* PASTA STYLE — big, dark */
+.hero__big-line--top {
+  font-size: clamp(56px, 8vw, 140px);
+}
+
+/* STREET FUEL — smaller, red, Bangers */
+.hero__big-line--bottom {
+  font-family: var(--font-sticker);
+  font-size: clamp(28px, 3.5vw, 58px);
+  color: var(--red);
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+/* ---- Full-bleed background video ---- */
+.hero__bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---- Stickers ---- */
+.sticker {
+  position: absolute;
+  z-index: 20;
+  user-select: none;
+  pointer-events: none;
+  transition: transform 0.3s;
+  line-height: 1;
+  white-space: pre-line;
+  text-align: center;
+}
+
+.sticker--red-badge {
+  background: var(--red);
+  color: var(--white);
+  font-family: var(--font-sticker);
+  font-size: clamp(20px, 2.4vw, 34px);
+  letter-spacing: 0.05em;
+  padding: 10px 18px;
+  border-radius: 8px;
+  box-shadow: 2px 3px 0 #7a0010;
+}
+
+.sticker--silver {
+  background: linear-gradient(135deg, #d8d8d8, #f0f0f0, #b0b0b0);
+  color: var(--fg);
+  font-family: var(--font-sticker);
+  font-size: clamp(16px, 2vw, 28px);
+  padding: 8px 14px;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 1px 2px 8px rgba(0,0,0,0.2);
+}
+
+.sticker--outline {
+  border: 2.5px solid var(--fg);
+  color: var(--fg);
+  font-family: var(--font-sticker);
+  font-size: clamp(10px, 1.2vw, 16px);
+  letter-spacing: 0.08em;
+  padding: 6px 12px;
+  background: var(--bg);
+}
+
+.sticker--spark {
+  font-size: clamp(28px, 3.5vw, 52px);
+  color: var(--fg);
+}
+
+.sticker--smiley {
+  font-size: clamp(28px, 3.5vw, 52px);
+  color: var(--red);
+}
+
+.sticker--red-logo {
+  font-family: var(--font-sticker);
+  font-size: clamp(22px, 2.8vw, 40px);
+  letter-spacing: 0.04em;
+  color: var(--red);
+  background: var(--cream);
+  border: 3px solid var(--red);
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+/* ---- Social handle ---- */
+.hero__social {
+  position: absolute;
+  top: 42%;
+  right: 18vw;
+  z-index: 20;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hero__social-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+.hero__social-handle {
+  display: block;
+  font-family: var(--font-sticker);
+  font-size: clamp(14px, 1.8vw, 22px);
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+}
+
+/* ---- Menu list ---- */
+.hero__menu-list {
+  position: absolute;
+  bottom: 80px;
+  left: 4vw;
+  z-index: 20;
+  max-width: 520px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  line-height: 1.8;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* ---- For label ---- */
+.hero__for-label {
+  position: absolute;
+  top: 14%;
+  left: 4vw;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.globe-icon {
+  font-size: 14px;
+}
+
+/* ── Mobile ─────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Let the video determine the hero height –
+     this ensures sticker % positions map exactly onto the video */
+  .hero {
+    height: auto;
+    min-height: unset;
+    overflow: visible;
+    background: #000;
+    display: block;          /* remove centering flex */
+  }
+
+  /* Video drives the container height — fully visible, no crop */
+  .hero__bg-video {
+    position: relative;       /* break out of absolute */
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: unset;
+    z-index: 1;
+  }
+
+  /* All absolute children still sit on top of the video */
+  .hero__bg-text,
+  .sticker,
+  .hero__social {
+    z-index: 3;
+  }
+
+  /* Slight dark scrim over the video */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.22);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* --- Headline: smaller, left-anchored --- */
+  .hero__big-line {
+    font-size: clamp(24px, 7.5vw, 56px);
+    padding-left: 4vw;
+  }
+
+  .hero__big-line--top {
+    font-size: clamp(28px, 8.5vw, 64px);
+  }
+
+  .hero__big-line--bottom {
+    font-size: clamp(16px, 4.5vw, 34px);
+    margin-top: 2px;
+  }
+
+  /* Text block near bottom of video */
+  .hero__bg-text {
+    bottom: 8%;
+  }
+
+  /* --- Stickers: scale proportionally --- */
+  .sticker--red-badge {
+    font-size: clamp(11px, 3.5vw, 18px);
+    padding: 5px 9px;
+  }
+
+  .sticker--silver {
+    font-size: clamp(10px, 3vw, 16px);
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+  }
+
+  .sticker--outline {
+    font-size: clamp(7px, 2vw, 11px);
+    padding: 3px 6px;
+  }
+
+  .sticker--spark  { font-size: clamp(16px, 5vw, 28px); }
+  .sticker--smiley { font-size: clamp(16px, 5vw, 28px); }
+
+  .sticker--red-logo {
+    font-size: clamp(12px, 3.8vw, 22px);
+    padding: 4px 7px;
+    border-width: 2px;
+  }
+
+  /* --- Social handle --- */
+  .hero__social {
+    right: 3vw;
+    bottom: 12%;
+    top: auto;
+    gap: 4px;
+  }
+
+  .hero__social-label  { font-size: 8px; letter-spacing: 0.1em; }
+  .hero__social-handle { font-size: clamp(10px, 3.2vw, 16px); }
+}
+
+/* Very small phones */
+@media (max-width: 390px) {
+  .hero__big-line--top    { font-size: 8.5vw; }
+  .hero__big-line--bottom { font-size: 4.5vw; }
+}

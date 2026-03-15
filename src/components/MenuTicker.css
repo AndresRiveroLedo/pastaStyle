@@ -1,0 +1,27 @@
+.menu-ticker {
+  border-top: 2.5px solid var(--fg);
+  border-bottom: 2.5px solid var(--fg);
+  background: var(--fg);
+  color: var(--bg);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.menu-ticker__track {
+  display: inline-flex;
+  animation: ticker-run 30s linear infinite;
+}
+
+.menu-ticker__text {
+  font-family: var(--font-hero);
+  font-size: clamp(18px, 2.2vw, 32px);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+@keyframes ticker-run {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

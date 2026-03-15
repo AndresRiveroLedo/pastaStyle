@@ -1,0 +1,59 @@
+/* ===========================
+   PASTA STAY — Global Design System
+   Inspired by vicio.com
+   =========================== */
+
+:root {
+  --bg: #F4F2EC;
+  --bg-dark: #1A1A18;
+  --fg: #0D0D0B;
+  --red: #E5001C;
+  --red-dark: #B50016;
+  --red-label: #cc0016;
+  --white: #FFFFFF;
+  --cream: #F4F2EC;
+  --font-hero: 'Bebas Neue', sans-serif;
+  --font-sticker: 'Bangers', cursive;
+  --font-marker: 'Permanent Marker', cursive;
+  --font-body: 'Inter', sans-serif;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--fg);
+  overflow-x: hidden;
+  cursor: default;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--cream); }
+::-webkit-scrollbar-thumb { background: var(--fg); border-radius: 3px; }
