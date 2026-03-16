@@ -12,11 +12,16 @@ export default function TopBar() {
   const [open, setOpen] = useState(false)
   const close = () => setOpen(false)
 
+  const scrollToTop = (e) => {
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <>
       <header className="topbar">
         {/* Logo — left */}
-        <a href="#hero" className="topbar__logo" id="topbar-logo">PASTA STYLE</a>
+        <a href="#" onClick={scrollToTop} className="topbar__logo" id="topbar-logo">PASTA STYLE</a>
 
         {/* Nav links — center (desktop only) */}
         <nav className="topbar__nav--desktop" aria-label="Top navigation">
@@ -45,7 +50,7 @@ export default function TopBar() {
       {open && (
         <div className="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
           <div className="mobile-menu__header">
-            <a href="#hero" className="mobile-menu__logo" onClick={close}>PASTA STYLE</a>
+            <a href="#" className="mobile-menu__logo" onClick={(e) => { scrollToTop(e); close(); }}>PASTA STYLE</a>
             <button className="mobile-menu__close" onClick={close} aria-label="Close menu">✕</button>
           </div>
 
