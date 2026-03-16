@@ -3,8 +3,8 @@ import './TopBar.css'
 
 const topLinks = [
   { label: 'MENU', href: '#menu', id: 'top-menu' },
-  { label: 'ABOUT', href: '#footer', id: 'top-about' },
-  { label: 'CONTACT', href: '#big-orders', id: 'top-contact' },
+  { label: 'ABOUT', href: '#big-orders', id: 'top-about' },
+  { label: 'CONTACT', href: '#footer', id: 'top-contact' },
   { label: 'GALLERY', href: '/gallery', id: 'top-gallery' },
 ]
 

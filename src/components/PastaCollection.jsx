@@ -82,18 +82,6 @@ export default function PastaCollection() {
           </div>
         ))}
       </div>
-
-      {/* Dot navigation */}
-      <div className="pasta-collection__dots">
-        {dishes.map((_, idx) => (
-          <button
-            key={idx}
-            className={`pasta-collection__dot ${active === idx ? 'pasta-collection__dot--active' : ''}`}
-            onClick={() => scrollTo(idx)}
-            aria-label={`Slide ${idx + 1}`}
-          />
-        ))}
-      </div>
     </section>
   )
 }

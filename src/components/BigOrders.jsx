@@ -5,9 +5,9 @@ export default function BigOrders() {
     <section className="big-orders" id="big-orders">
       <div className="big-orders__content">
         <div className="big-orders__text">
-          <h2 className="big-orders__eyebrow">BIG ORDERS</h2>
-          <p className="big-orders__question">NEED TO PLACE A<br/>BIG ORDER?</p>
-          <p className="big-orders__sub">For groups, events, offices… we've got you covered. Pasta for everyone.</p>
+          <h2 className="big-orders__eyebrow">BIG ENERGY</h2>
+          <p className="big-orders__question">IS THE VIBE <br/> TOO BIG TO SHARE?</p>
+          <p className="big-orders__sub">For those moments when one fork is a tragedy. Unapologetic fuel for the entire tribe. We provide the fuel, you curate the chaos. No limits, only flavor.</p>
           <a href="#" className="big-orders__cta" id="big-orders-cta">
             GET IN TOUCH
           </a>
