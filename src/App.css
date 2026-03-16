@@ -1,5 +1,4 @@
 /* App-level layout */
 .app {
   min-height: 100vh;
-  padding-bottom: 80px; /* space for fixed bottom nav */
 }

@@ -2,7 +2,7 @@
   padding: 80px 4vw;
   background: var(--fg);
   color: var(--bg);
-  border-top: 2.5px solid var(--fg);
+  margin: 0;
 }
 
 .big-orders__content {
